@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { generateText, stepCountIs } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 
 import { tools } from "../src/tools";
 import { SYSTEM_PROMPT } from "../src/system-prompt";
@@ -44,13 +44,13 @@ if (!apiKey) {
   process.exit(1);
 }
 
-const openai = createOpenAI({ apiKey });
+const anthropic = createAnthropic({ apiKey });
 
 async function runTestCase(testCase: TestCase): Promise<EvalResult> {
   const start = Date.now();
   try {
     const result = await generateText({
-      model: openai("gpt-5.4-mini"),
+      model: anthropic("claude-haiku-4-5-20251001"),
       system: SYSTEM_PROMPT,
       prompt: testCase.input,
       tools,
