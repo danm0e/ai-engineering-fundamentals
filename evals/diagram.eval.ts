@@ -11,7 +11,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { config } from "dotenv";
 import { Eval } from "braintrust";
-import { createOpenAI } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 
 import { runAgent } from "../src/agent-core";
 import { buildMessages, type GoldenTestCase } from "./buildMessages";
@@ -22,7 +22,7 @@ import { labelKeywordScorer } from "./scorers/labelKeyword";
 
 config({ path: ".dev.vars" });
 
-const openai = createOpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const anthropic = createAnthropic({ apiKey: process.env.OPENAI_API_KEY });
 
 const testCases: GoldenTestCase[] = JSON.parse(
   readFileSync(join("evals", "datasets", "golden.json"), "utf-8")
@@ -42,7 +42,7 @@ Eval<GoldenTestCase, AgentOutput, GoldenTestCase>("Diagram Agent", {
 
   task: async (testCase) => {
     const result = await runAgent({
-      model: openai("gpt-5.4-mini"),
+      model: anthropic("claude-haiku-4-5-20251001"),
       messages: buildMessages(testCase),
       canvasState: testCase.seed?.elements ?? [],
     });
