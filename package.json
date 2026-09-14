@@ -14,7 +14,7 @@
     "embed": "dotenv -e .dev.vars -- tsx src/rag/embed.ts"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^3.0.50",
+    "@ai-sdk/anthropic": "^3.0.118",
     "@cloudflare/ai-chat": "^0.3.2",
     "@excalidraw/excalidraw": "^0.18.0",
     "@upstash/vector": "^1.2.3",
