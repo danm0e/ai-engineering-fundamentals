@@ -4,7 +4,7 @@ import {
   convertToModelMessages,
   stepCountIs,
 } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { tools } from "./tools";
 
 interface Env {
@@ -29,10 +29,10 @@ When the user asks to modify an element, use the modifyDiagram tool with the ele
 
 export class DesignAgent extends AIChatAgent<Env> {
   async onChatMessage() {
-    const openai = createOpenAI({ apiKey: this.env.OPENAI_API_KEY });
+    const anthropic = createAnthropic({ apiKey: this.env.OPENAI_API_KEY });
 
     const result = streamText({
-      model: openai("gpt-5.4-mini"),
+      model: anthropic("claude-haiku-4-5-20251001"),
       system: SYSTEM_PROMPT,
       messages: await convertToModelMessages(this.messages),
       tools,
