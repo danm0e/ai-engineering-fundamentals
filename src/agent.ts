@@ -1,6 +1,6 @@
 import { AIChatAgent } from "@cloudflare/ai-chat";
 import { convertToModelMessages } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { streamAgent } from "./agent-core";
 
 interface Env extends Cloudflare.Env {
@@ -9,10 +9,10 @@ interface Env extends Cloudflare.Env {
 
 export class DesignAgent extends AIChatAgent<Env> {
   async onChatMessage() {
-    const openai = createOpenAI({ apiKey: this.env.OPENAI_API_KEY });
+    const anthropic = createAnthropic({ apiKey: this.env.OPENAI_API_KEY });
 
     const result = streamAgent({
-      model: openai("gpt-5.4-mini"),
+      model: anthropic("claude-haiku-4-5-20251001"),
       messages: await convertToModelMessages(this.messages),
     });
 
