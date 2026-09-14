@@ -1,6 +1,6 @@
 import { AIChatAgent } from "@cloudflare/ai-chat";
 import { convertToModelMessages } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { streamAgent } from "./agent-core";
 import { compactHistory } from "./context/compaction";
 
@@ -13,8 +13,8 @@ interface Env extends Cloudflare.Env {
 
 export class DesignAgent extends AIChatAgent<Env> {
   async onChatMessage() {
-    const openai = createOpenAI({ apiKey: this.env.OPENAI_API_KEY });
-    const model = openai("gpt-5.4-mini");
+    const anthropic = createAnthropic({ apiKey: this.env.OPENAI_API_KEY });
+    const model = anthropic("claude-haiku-4-5-20251001");
 
     // Compact older history if the conversation has gotten long. The recent
     // few turns stay verbatim; everything older is collapsed into one
