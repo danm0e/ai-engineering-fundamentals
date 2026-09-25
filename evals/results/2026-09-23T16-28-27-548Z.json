@@ -1,0 +1,6425 @@
+[
+  {
+    "testCaseId": "create-simple-01",
+    "input": "Draw a single rectangle labeled Hello",
+    "response": "I've created a rectangle with the label \"Hello\" in the center. The rectangle is drawn with a clean outline and the text is centered inside it.",
+    "elements": [
+      {
+        "id": "rect-1",
+        "type": "rectangle",
+        "x": 100,
+        "y": 100,
+        "width": 200,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "text-1",
+        "type": "text",
+        "x": 200,
+        "y": 150,
+        "width": 50,
+        "height": 25,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Hello",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 3325
+  },
+  {
+    "testCaseId": "create-simple-02",
+    "input": "Draw a circle and a square next to each other",
+    "response": "Done! I've created a circle and a square next to each other. The circle is on the left and the square is on the right, with nice spacing between them.",
+    "elements": [
+      {
+        "id": "circle-1",
+        "type": "ellipse",
+        "x": 100,
+        "y": 150,
+        "width": 100,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "square-1",
+        "type": "rectangle",
+        "x": 280,
+        "y": 150,
+        "width": 100,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 2500
+  },
+  {
+    "testCaseId": "create-simple-03",
+    "input": "Draw a simple flowchart with Start, Process, and End boxes connected by arrows",
+    "response": "Perfect! I've created a simple flowchart with three elements:\n\n1. **Start** - Shown as an oval/ellipse at the top\n2. **Process** - Shown as a rectangle in the middle\n3. **End** - Shown as an oval/ellipse at the bottom\n\nThe elements are connected by arrows flowing downward, creating a classic top-to-bottom flowchart layout. You can modify any of these elements if you'd like to change their text, colors, sizes, or positions!",
+    "elements": [
+      {
+        "id": "start-box",
+        "type": "ellipse",
+        "x": 200,
+        "y": 50,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Start",
+        "fontSize": 18,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "process-box",
+        "type": "rectangle",
+        "x": 175,
+        "y": 170,
+        "width": 170,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Process",
+        "fontSize": 18,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "end-box",
+        "type": "ellipse",
+        "x": 200,
+        "y": 320,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "End",
+        "fontSize": 18,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-1",
+        "type": "arrow",
+        "x": 260,
+        "y": 110,
+        "width": 10,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "start-box",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "process-box",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-2",
+        "type": "arrow",
+        "x": 260,
+        "y": 250,
+        "width": 10,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            70
+          ]
+        ],
+        "startBinding": {
+          "elementId": "process-box",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "end-box",
+          "focus": 0,
+          "gap": 5
+        }
+      }
+    ],
+    "durationMs": 9478
+  },
+  {
+    "testCaseId": "create-simple-04",
+    "input": "Draw a diamond labeled 'Decision' with two arrows coming out of it labeled 'Yes' and 'No'",
+    "response": "Perfect! I've created a diagram with a diamond shape labeled \"Decision\" and two arrows coming out of it:\n- The left arrow is labeled \"Yes\"\n- The right arrow is labeled \"No\"\n\nThe diamond represents a decision point, and the two arrows show the two possible paths based on the decision outcome.",
+    "elements": [
+      {
+        "id": "diamond-1",
+        "type": "diamond",
+        "x": 200,
+        "y": 100,
+        "width": 120,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Decision",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-1",
+        "type": "arrow",
+        "x": 140,
+        "y": 220,
+        "width": 0,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Yes",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            140,
+            220
+          ],
+          [
+            80,
+            320
+          ]
+        ],
+        "startBinding": {
+          "elementId": "diamond-1",
+          "focus": -0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-2",
+        "type": "arrow",
+        "x": 260,
+        "y": 220,
+        "width": 0,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "No",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            260,
+            220
+          ],
+          [
+            320,
+            320
+          ]
+        ],
+        "startBinding": {
+          "elementId": "diamond-1",
+          "focus": 0.5,
+          "gap": 10
+        }
+      }
+    ],
+    "durationMs": 4201
+  },
+  {
+    "testCaseId": "create-simple-05",
+    "input": "Draw three rectangles in a vertical column labeled Top, Middle, Bottom",
+    "response": "Perfect! I've created three rectangles arranged vertically with labels:\n- **Top** rectangle at the top\n- **Middle** rectangle in the center\n- **Bottom** rectangle at the bottom\n\nAll three rectangles are the same size (120×80 pixels) and are evenly spaced along a vertical column. The labels are centered within each rectangle.",
+    "elements": [
+      {
+        "id": "rect-1",
+        "type": "rectangle",
+        "x": 100,
+        "y": 50,
+        "width": 120,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "text-1",
+        "type": "text",
+        "x": 160,
+        "y": 90,
+        "width": 40,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Top",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "rect-2",
+        "type": "rectangle",
+        "x": 100,
+        "y": 170,
+        "width": 120,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "text-2",
+        "type": "text",
+        "x": 160,
+        "y": 210,
+        "width": 60,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Middle",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "rect-3",
+        "type": "rectangle",
+        "x": 100,
+        "y": 290,
+        "width": 120,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "text-3",
+        "type": "text",
+        "x": 160,
+        "y": 330,
+        "width": 60,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Bottom",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 5020
+  },
+  {
+    "testCaseId": "create-medium-01",
+    "input": "Draw a login flow: user enters credentials, system validates, if valid go to dashboard, if invalid show error",
+    "response": "Perfect! I've created a login flow diagram for you. Here's what it shows:\n\n**Flow:**\n1. **Start** → User enters credentials\n2. **User Enters Credentials** → System validates the input\n3. **Decision Point** - \"Valid?\" branches into two paths:\n   - **Yes** → Go to Dashboard → End\n   - **No** → Show Error → Clear & Retry → loops back to enter credentials\n\nThe diagram includes:\n- **Ellipses** for start/end points\n- **Rectangles** for actions/processes\n- **Diamond** for the decision point\n- **Arrows** showing the flow direction with \"Yes\" and \"No\" labels on the decision branches\n- A **retry loop** that allows users to attempt login again after an error\n\nThis is a complete login flow that handles both successful validation and error scenarios!",
+    "elements": [
+      {
+        "id": "start",
+        "type": "ellipse",
+        "x": 150,
+        "y": 50,
+        "width": 80,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Start",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "enter-creds",
+        "type": "rectangle",
+        "x": 100,
+        "y": 150,
+        "width": 180,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "User Enters\nCredentials",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "validate",
+        "type": "rectangle",
+        "x": 100,
+        "y": 280,
+        "width": 180,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "System\nValidates",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "decision",
+        "type": "diamond",
+        "x": 130,
+        "y": 430,
+        "width": 120,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Valid?",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "dashboard",
+        "type": "rectangle",
+        "x": 320,
+        "y": 445,
+        "width": 150,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Go to\nDashboard",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "error",
+        "type": "rectangle",
+        "x": -50,
+        "y": 445,
+        "width": 150,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Show\nError",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "end-valid",
+        "type": "ellipse",
+        "x": 345,
+        "y": 580,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "End",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "retry",
+        "type": "rectangle",
+        "x": -50,
+        "y": 580,
+        "width": 150,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Clear &\nRetry",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-1",
+        "type": "arrow",
+        "x": 190,
+        "y": 110,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "start",
+          "focus": 0,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "enter-creds",
+          "focus": 0,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-2",
+        "type": "arrow",
+        "x": 190,
+        "y": 230,
+        "width": 0,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "startBinding": {
+          "elementId": "enter-creds",
+          "focus": 0,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "validate",
+          "focus": 0,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-3",
+        "type": "arrow",
+        "x": 190,
+        "y": 360,
+        "width": 0,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            70
+          ]
+        ],
+        "startBinding": {
+          "elementId": "validate",
+          "focus": 0,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "decision",
+          "focus": 0,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-4",
+        "type": "arrow",
+        "x": 250,
+        "y": 475,
+        "width": 70,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            70,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "decision",
+          "focus": 1,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "dashboard",
+          "focus": -1,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-5",
+        "type": "arrow",
+        "x": 70,
+        "y": 475,
+        "width": -70,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -70,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "decision",
+          "focus": -1,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "error",
+          "focus": 1,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-6",
+        "type": "arrow",
+        "x": 395,
+        "y": 515,
+        "width": 0,
+        "height": 65,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            65
+          ]
+        ],
+        "startBinding": {
+          "elementId": "dashboard",
+          "focus": 0,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "end-valid",
+          "focus": 0,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-7",
+        "type": "arrow",
+        "x": 25,
+        "y": 515,
+        "width": 0,
+        "height": 65,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            65
+          ]
+        ],
+        "startBinding": {
+          "elementId": "error",
+          "focus": 0,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "retry",
+          "focus": 0,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-8",
+        "type": "arrow",
+        "x": 25,
+        "y": 600,
+        "width": 75,
+        "height": -20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            75,
+            -20
+          ]
+        ],
+        "startBinding": {
+          "elementId": "retry",
+          "focus": 0,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "enter-creds",
+          "focus": -1,
+          "gap": 0
+        }
+      },
+      {
+        "id": "text-yes",
+        "type": "text",
+        "x": 280,
+        "y": 455,
+        "width": 40,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Yes",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "text-no",
+        "type": "text",
+        "x": 60,
+        "y": 455,
+        "width": 40,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "No",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 35911
+  },
+  {
+    "testCaseId": "create-medium-02",
+    "input": "Draw an entity relationship diagram for a blog: Users have many Posts, Posts have many Comments",
+    "response": "I've created an entity relationship diagram for your blog system! Here's what I included:\n\n**Three entities:**\n1. **Users** - Contains id (primary key), username, email, and created_at\n2. **Posts** - Contains id (primary key), user_id (foreign key), title, content, and created_at\n3. **Comments** - Contains id (primary key), post_id (foreign key), user_id (foreign key), content, and created_at\n\n**Relationships:**\n- **Users → Posts**: \"has many\" relationship (one user can create multiple posts)\n- **Posts → Comments**: \"has many\" relationship (one post can have multiple comments)\n\nThe diagram shows the flow from left to right, with foreign key relationships properly indicated. This structure allows you to track which user created each post, and which post each comment belongs to, while also being able to track which user made each comment through the user_id field in Comments.",
+    "elements": [
+      {
+        "id": "users-entity",
+        "type": "rectangle",
+        "x": 50,
+        "y": 100,
+        "width": 150,
+        "height": 120,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Users\n\nid (PK)\nusername\nemail\ncreated_at",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "left"
+      },
+      {
+        "id": "posts-entity",
+        "type": "rectangle",
+        "x": 350,
+        "y": 100,
+        "width": 150,
+        "height": 120,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Posts\n\nid (PK)\nuser_id (FK)\ntitle\ncontent\ncreated_at",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "left"
+      },
+      {
+        "id": "comments-entity",
+        "type": "rectangle",
+        "x": 650,
+        "y": 100,
+        "width": 150,
+        "height": 120,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Comments\n\nid (PK)\npost_id (FK)\nuser_id (FK)\ncontent\ncreated_at",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "left"
+      },
+      {
+        "id": "arrow-users-posts",
+        "type": "arrow",
+        "x": 200,
+        "y": 160,
+        "width": 150,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            150,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "users-entity",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "posts-entity",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "label-users-posts",
+        "type": "text",
+        "x": 250,
+        "y": 140,
+        "width": 50,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "has many",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-posts-comments",
+        "type": "arrow",
+        "x": 500,
+        "y": 160,
+        "width": 150,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            150,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "posts-entity",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "comments-entity",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "label-posts-comments",
+        "type": "text",
+        "x": 550,
+        "y": 140,
+        "width": 50,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "has many",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 7420
+  },
+  {
+    "testCaseId": "create-medium-03",
+    "input": "Draw a simple web architecture: Browser sends requests to a Load Balancer, which forwards to two Web Servers, which read from a Database",
+    "response": "Perfect! I've created a simple web architecture diagram showing:\n\n1. **Browser** (blue) - The client making requests\n2. **Load Balancer** (orange) - Distributes incoming requests to the web servers\n3. **Web Server 1 & 2** (purple) - Two backend servers handling requests in parallel\n4. **Database** (green) - The data storage layer\n\nThe arrows show the request flow:\n- Browser → Load Balancer\n- Load Balancer → Web Servers (splitting traffic between both)\n- Web Servers → Database (for data access)\n\nThis is a classic scalable architecture where the load balancer ensures traffic is distributed evenly across multiple servers, and both servers can independently access the database. Would you like me to modify any part of this diagram?",
+    "elements": [
+      {
+        "id": "browser",
+        "type": "rectangle",
+        "x": 50,
+        "y": 150,
+        "width": 100,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e3f2fd",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Browser",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "lb",
+        "type": "rectangle",
+        "x": 250,
+        "y": 150,
+        "width": 120,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff3e0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Load Balancer",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "ws1",
+        "type": "rectangle",
+        "x": 500,
+        "y": 80,
+        "width": 110,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f3e5f5",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Web Server 1",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "ws2",
+        "type": "rectangle",
+        "x": 500,
+        "y": 220,
+        "width": 110,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f3e5f5",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Web Server 2",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "db",
+        "type": "rectangle",
+        "x": 750,
+        "y": 150,
+        "width": 100,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e8f5e9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Database",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow1",
+        "type": "arrow",
+        "x": 150,
+        "y": 190,
+        "width": 100,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            100,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "browser",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "lb",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow2",
+        "type": "arrow",
+        "x": 370,
+        "y": 170,
+        "width": 130,
+        "height": -50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            130,
+            -50
+          ]
+        ],
+        "startBinding": {
+          "elementId": "lb",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "ws1",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow3",
+        "type": "arrow",
+        "x": 370,
+        "y": 210,
+        "width": 130,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            130,
+            50
+          ]
+        ],
+        "startBinding": {
+          "elementId": "lb",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "ws2",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow4",
+        "type": "arrow",
+        "x": 610,
+        "y": 120,
+        "width": 140,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            140,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ws1",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "db",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow5",
+        "type": "arrow",
+        "x": 610,
+        "y": 260,
+        "width": 140,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            140,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ws2",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "db",
+          "focus": 0,
+          "gap": 5
+        }
+      }
+    ],
+    "durationMs": 8777
+  },
+  {
+    "testCaseId": "create-medium-04",
+    "input": "Draw a sequence diagram: Client calls Server, Server calls Database, Database returns data, Server returns response to Client",
+    "response": "Perfect! I've created a sequence diagram showing the interaction between Client, Server, and Database. The diagram includes:\n\n1. **Three actors** (Client, Server, Database) at the top, each with a vertical timeline\n2. **Four sequential interactions**:\n   - **1. Call Server** - Client sends a request to the Server\n   - **2. Query DB** - Server forwards a query to the Database\n   - **3. Return Data** - Database sends data back to the Server\n   - **4. Response** - Server returns the final response to the Client\n\nThe arrows flow top to bottom in chronological order, showing the complete request-response cycle. Each component is color-coded for easy identification.",
+    "elements": [
+      {
+        "id": "client-box",
+        "type": "rectangle",
+        "x": 50,
+        "y": 20,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e3f2fd",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Client",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "server-box",
+        "type": "rectangle",
+        "x": 300,
+        "y": 20,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f3e5f5",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Server",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "database-box",
+        "type": "rectangle",
+        "x": 550,
+        "y": 20,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e8f5e9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Database",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "client-line",
+        "type": "line",
+        "x": 100,
+        "y": 70,
+        "width": 0,
+        "height": 300,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 1,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "server-line",
+        "type": "line",
+        "x": 350,
+        "y": 70,
+        "width": 0,
+        "height": 300,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 1,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "database-line",
+        "type": "line",
+        "x": 600,
+        "y": 70,
+        "width": 0,
+        "height": 300,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 1,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "arrow-1",
+        "type": "arrow",
+        "x": 100,
+        "y": 100,
+        "width": 250,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            250,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "client-box",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "server-box",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "label-1",
+        "type": "text",
+        "x": 150,
+        "y": 95,
+        "width": 150,
+        "height": 30,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "1. Call Server",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-2",
+        "type": "arrow",
+        "x": 350,
+        "y": 150,
+        "width": 250,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            250,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "server-box",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "database-box",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "label-2",
+        "type": "text",
+        "x": 400,
+        "y": 145,
+        "width": 150,
+        "height": 30,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "2. Query DB",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-3",
+        "type": "arrow",
+        "x": 600,
+        "y": 220,
+        "width": -250,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -250,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "database-box",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "server-box",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "label-3",
+        "type": "text",
+        "x": 400,
+        "y": 215,
+        "width": 150,
+        "height": 30,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "3. Return Data",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-4",
+        "type": "arrow",
+        "x": 350,
+        "y": 290,
+        "width": -250,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -250,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "server-box",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "client-box",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "label-4",
+        "type": "text",
+        "x": 150,
+        "y": 285,
+        "width": 150,
+        "height": 30,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "4. Response",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 8991
+  },
+  {
+    "testCaseId": "create-medium-05",
+    "input": "Draw a state machine for a traffic light with Red, Yellow, Green states transitioning in order",
+    "response": "I've created a traffic light state machine diagram for you! Here's what it shows:\n\n**States:**\n- **Red** (left) - represented with a red circle\n- **Yellow** (middle) - represented with a yellow circle\n- **Green** (right) - represented with a green circle\n\n**Transitions:**\n- Red → Yellow (30 seconds)\n- Yellow → Green (3 seconds)\n- Green → Red (25 seconds)\n\nThe diagram shows the complete cycle of a traffic light, with arrows connecting each state in order. The time labels on each transition show typical durations for each state. The curved arrow at the bottom represents the cycle completing as the light transitions from Green back to Red.",
+    "elements": [
+      {
+        "id": "red-state",
+        "type": "ellipse",
+        "x": 100,
+        "y": 150,
+        "width": 100,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ff0000",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Red",
+        "fontSize": 18,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "yellow-state",
+        "type": "ellipse",
+        "x": 350,
+        "y": 150,
+        "width": 100,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ffff00",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Yellow",
+        "fontSize": 18,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "green-state",
+        "type": "ellipse",
+        "x": 600,
+        "y": 150,
+        "width": 100,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#00ff00",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Green",
+        "fontSize": 18,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-red-to-yellow",
+        "type": "arrow",
+        "x": 200,
+        "y": 180,
+        "width": 150,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            150,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "red-state",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "yellow-state",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-yellow-to-green",
+        "type": "arrow",
+        "x": 450,
+        "y": 180,
+        "width": 150,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            150,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "yellow-state",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "green-state",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-green-to-red",
+        "type": "arrow",
+        "x": 350,
+        "y": 280,
+        "width": 300,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            300,
+            0
+          ],
+          [
+            250,
+            80
+          ],
+          [
+            50,
+            80
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "green-state",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "red-state",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "label-red-yellow",
+        "type": "text",
+        "x": 260,
+        "y": 150,
+        "width": 80,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "30s",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "label-yellow-green",
+        "type": "text",
+        "x": 510,
+        "y": 150,
+        "width": 80,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "3s",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "label-green-red",
+        "type": "text",
+        "x": 350,
+        "y": 310,
+        "width": 80,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "25s",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 12362
+  },
+  {
+    "testCaseId": "create-complex-01",
+    "input": "Draw an org chart for a company: CEO at top, 3 VPs reporting to CEO (Engineering, Sales, Marketing), each VP has 3 directors under them",
+    "response": "Perfect! I've created a comprehensive organizational chart for your company. Here's what I included:\n\n**Structure:**\n- **CEO** (blue box at the top) - the highest authority\n- **3 VPs** (green boxes in the middle tier):\n  - VP Engineering\n  - VP Sales\n  - VP Marketing\n- **9 Directors** (yellow boxes at the bottom - 3 under each VP):\n  - **Under VP Engineering**: Director Frontend, Director Backend, Director QA\n  - **Under VP Sales**: Director Enterprise, Director SMB, Director Partners\n  - **Under VP Marketing**: Director Demand Gen, Director Product Marketing, Director Brand\n\nAll positions are connected with arrows showing the reporting relationships. The color coding makes it easy to distinguish between hierarchy levels. Feel free to ask if you'd like to modify any titles, add more levels, or adjust the layout!",
+    "elements": [
+      {
+        "id": "ceo-box",
+        "type": "rectangle",
+        "x": 450,
+        "y": 20,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E3F2FD",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "CEO",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "vp-eng-box",
+        "type": "rectangle",
+        "x": 100,
+        "y": 140,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#C8E6C9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "VP Engineering",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "vp-sales-box",
+        "type": "rectangle",
+        "x": 440,
+        "y": 140,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#C8E6C9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "VP Sales",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "vp-marketing-box",
+        "type": "rectangle",
+        "x": 780,
+        "y": 140,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#C8E6C9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "VP Marketing",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-eng-1",
+        "type": "rectangle",
+        "x": 20,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nFrontend",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-eng-2",
+        "type": "rectangle",
+        "x": 120,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nBackend",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-eng-3",
+        "type": "rectangle",
+        "x": 220,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nQA",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-sales-1",
+        "type": "rectangle",
+        "x": 360,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nEnterprise",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-sales-2",
+        "type": "rectangle",
+        "x": 460,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nSMB",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-sales-3",
+        "type": "rectangle",
+        "x": 560,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nPartners",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-marketing-1",
+        "type": "rectangle",
+        "x": 700,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nDemand Gen",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-marketing-2",
+        "type": "rectangle",
+        "x": 800,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nProduct Mktg",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "dir-marketing-3",
+        "type": "rectangle",
+        "x": 900,
+        "y": 260,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFECB3",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Director\nBrand",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-ceo-eng",
+        "type": "arrow",
+        "x": 480,
+        "y": 80,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            20,
+            0
+          ],
+          [
+            -80,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ceo-box",
+          "focus": -0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "vp-eng-box",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-ceo-sales",
+        "type": "arrow",
+        "x": 500,
+        "y": 80,
+        "width": 20,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ceo-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "vp-sales-box",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-ceo-marketing",
+        "type": "arrow",
+        "x": 500,
+        "y": 80,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            80,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ceo-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "vp-marketing-box",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-eng-dir1",
+        "type": "arrow",
+        "x": 120,
+        "y": 200,
+        "width": 40,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -40,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-eng-box",
+          "focus": -0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-eng-1",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-eng-dir2",
+        "type": "arrow",
+        "x": 160,
+        "y": 200,
+        "width": 20,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-eng-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-eng-2",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-eng-dir3",
+        "type": "arrow",
+        "x": 160,
+        "y": 200,
+        "width": 40,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            40,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-eng-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-eng-3",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-sales-dir1",
+        "type": "arrow",
+        "x": 460,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -80,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-sales-box",
+          "focus": -0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-sales-1",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-sales-dir2",
+        "type": "arrow",
+        "x": 500,
+        "y": 200,
+        "width": 20,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-sales-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-sales-2",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-sales-dir3",
+        "type": "arrow",
+        "x": 500,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            80,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-sales-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-sales-3",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-marketing-dir1",
+        "type": "arrow",
+        "x": 800,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -80,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-marketing-box",
+          "focus": -0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-marketing-1",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-marketing-dir2",
+        "type": "arrow",
+        "x": 840,
+        "y": 200,
+        "width": 20,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-marketing-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-marketing-2",
+          "focus": 0.5,
+          "gap": 10
+        }
+      },
+      {
+        "id": "arrow-marketing-dir3",
+        "type": "arrow",
+        "x": 840,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            80,
+            60
+          ]
+        ],
+        "startBinding": {
+          "elementId": "vp-marketing-box",
+          "focus": 0.5,
+          "gap": 10
+        },
+        "endBinding": {
+          "elementId": "dir-marketing-3",
+          "focus": 0.5,
+          "gap": 10
+        }
+      }
+    ],
+    "durationMs": 28632
+  },
+  {
+    "testCaseId": "create-complex-02",
+    "input": "Draw a microservices architecture: API Gateway receives requests, routes to Auth Service, User Service, Order Service, and Payment Service. Each service has its own database. Order Service also calls Payment Service.",
+    "response": "Perfect! I've created a microservices architecture diagram showing:\n\n**Key components:**\n- **Client** - Makes requests to the system\n- **API Gateway** - Acts as the entry point, routing all requests to appropriate services\n- **Four Microservices** (each with their own database):\n  - **Auth Service** with Auth DB\n  - **User Service** with User DB\n  - **Order Service** with Order DB\n  - **Payment Service** with Payment DB\n\n**Request flows:**\n- All client requests go through the API Gateway\n- The gateway routes requests to the appropriate service\n- Each service manages its own database independently\n- The Order Service has an additional connection (highlighted in red) to call the Payment Service for processing payments\n\nThe architecture follows the microservices pattern where each service is independent and has its own data storage, promoting loose coupling and independent scalability.",
+    "elements": [
+      {
+        "id": "client",
+        "type": "ellipse",
+        "x": 50,
+        "y": 100,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Client",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-client-gateway",
+        "type": "arrow",
+        "x": 150,
+        "y": 130,
+        "width": 50,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "client",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "gateway",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "gateway",
+        "type": "rectangle",
+        "x": 200,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e8f4f8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "API Gateway",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-gateway-auth",
+        "type": "arrow",
+        "x": 320,
+        "y": 80,
+        "width": 60,
+        "height": -40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            60,
+            -40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "gateway",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "auth-service",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "auth-service",
+        "type": "rectangle",
+        "x": 380,
+        "y": 20,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff4e6",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Auth Service",
+        "fontSize": 13,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "auth-db",
+        "type": "rectangle",
+        "x": 380,
+        "y": 100,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Auth DB",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-auth-authdb",
+        "type": "arrow",
+        "x": 430,
+        "y": 80,
+        "width": 0,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "startBinding": {
+          "elementId": "auth-service",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "auth-db",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-gateway-user",
+        "type": "arrow",
+        "x": 320,
+        "y": 130,
+        "width": 60,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            60,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "gateway",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "user-service",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "user-service",
+        "type": "rectangle",
+        "x": 380,
+        "y": 105,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff4e6",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "User Service",
+        "fontSize": 13,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "user-db",
+        "type": "rectangle",
+        "x": 380,
+        "y": 185,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "User DB",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-user-userdb",
+        "type": "arrow",
+        "x": 430,
+        "y": 165,
+        "width": 0,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "startBinding": {
+          "elementId": "user-service",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "user-db",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-gateway-order",
+        "type": "arrow",
+        "x": 320,
+        "y": 150,
+        "width": 60,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            60,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "gateway",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "order-service",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "order-service",
+        "type": "rectangle",
+        "x": 380,
+        "y": 190,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff4e6",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Order Service",
+        "fontSize": 13,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "order-db",
+        "type": "rectangle",
+        "x": 380,
+        "y": 270,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Order DB",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-order-orderdb",
+        "type": "arrow",
+        "x": 430,
+        "y": 250,
+        "width": 0,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "startBinding": {
+          "elementId": "order-service",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "order-db",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-gateway-payment",
+        "type": "arrow",
+        "x": 320,
+        "y": 150,
+        "width": 60,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            60,
+            80
+          ]
+        ],
+        "startBinding": {
+          "elementId": "gateway",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "payment-service",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "payment-service",
+        "type": "rectangle",
+        "x": 380,
+        "y": 275,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff4e6",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Payment Service",
+        "fontSize": 13,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "payment-db",
+        "type": "rectangle",
+        "x": 380,
+        "y": 355,
+        "width": 100,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Payment DB",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-payment-paymentdb",
+        "type": "arrow",
+        "x": 430,
+        "y": 335,
+        "width": 0,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "startBinding": {
+          "elementId": "payment-service",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "payment-db",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-order-payment",
+        "type": "arrow",
+        "x": 430,
+        "y": 250,
+        "width": 30,
+        "height": 25,
+        "strokeColor": "#d9534f",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            30,
+            25
+          ]
+        ],
+        "startBinding": {
+          "elementId": "order-service",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "payment-service",
+          "focus": 0.5,
+          "gap": 5
+        }
+      }
+    ],
+    "durationMs": 15510
+  },
+  {
+    "testCaseId": "create-complex-03",
+    "input": "Draw a complex e-commerce checkout flow with 8 steps: Cart Review, Shipping Address, Shipping Method, Payment, Order Review, Place Order, Confirmation, Email Receipt. Include error paths if payment fails.",
+    "response": "Perfect! I've created a comprehensive e-commerce checkout flow diagram with all 8 steps and error handling. Here's what the diagram includes:\n\n## Flow Overview:\n\n**Main Steps (Blue boxes):**\n1. **Cart Review** - Customer reviews their shopping cart\n2. **Shipping Address** - Customer enters/confirms shipping address\n3. **Shipping Method** - Customer selects shipping option\n4. **Payment** - Customer enters payment information\n5. **Order Review** - Final review before placing order\n6. **Place Order** - Order is submitted to system\n7. **Confirmation** - Order confirmation page displayed\n8. **Email Receipt** - Confirmation email sent to customer\n\n**Error Handling (Red path):**\n- After the Payment step, there's a **Decision Diamond** that checks if payment was successful\n- If payment **fails (No path)**: User is directed to the \"Payment Error\" box\n- From the error box, there's a **\"Retry Payment\" feedback loop** that returns the user to the Payment step to try again\n- If payment **succeeds (Yes path)**: Flow continues to Order Review\n\n**Visual Legend:**\n- Light blue boxes = Main checkout flow\n- Light red/pink boxes = Error states\n- Red arrows = Error paths\n- Green start circle and pink end circle for clarity\n\nThe diagram clearly shows how customers flow through the checkout process and demonstrates how payment failures are handled with the ability to retry payment without starting over.",
+    "elements": [
+      {
+        "id": "start-1",
+        "type": "ellipse",
+        "x": 50,
+        "y": 20,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#90EE90",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Start",
+        "fontSize": 16,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "step1-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 120,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "1. Cart Review",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-1",
+        "type": "arrow",
+        "x": 100,
+        "y": 80,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "start-1",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step1-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "step2-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 230,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "2. Shipping Address",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-2",
+        "type": "arrow",
+        "x": 100,
+        "y": 190,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step1-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step2-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "step3-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 340,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "3. Shipping Method",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-3",
+        "type": "arrow",
+        "x": 100,
+        "y": 300,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step2-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step3-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "step4-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 450,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFE8E8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "4. Payment",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-4",
+        "type": "arrow",
+        "x": 100,
+        "y": 410,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step3-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step4-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "payment-check",
+        "type": "diamond",
+        "x": 50,
+        "y": 565,
+        "width": 100,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFF8DC",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Payment\nSuccess?",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-5",
+        "type": "arrow",
+        "x": 100,
+        "y": 520,
+        "width": 0,
+        "height": 45,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step4-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "payment-check",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "error-rect",
+        "type": "rectangle",
+        "x": 240,
+        "y": 565,
+        "width": 140,
+        "height": 70,
+        "strokeColor": "#DC143C",
+        "backgroundColor": "#FFB6C1",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Payment Error",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-error",
+        "type": "arrow",
+        "x": 150,
+        "y": 600,
+        "width": 90,
+        "height": 0,
+        "strokeColor": "#DC143C",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            90,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "payment-check",
+          "focus": 1,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "error-rect",
+          "focus": -1,
+          "gap": 5
+        }
+      },
+      {
+        "id": "error-label",
+        "type": "text",
+        "x": 170,
+        "y": 580,
+        "width": 60,
+        "height": 20,
+        "strokeColor": "#DC143C",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "No",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "retry-arrow",
+        "type": "arrow",
+        "x": 310,
+        "y": 635,
+        "width": 210,
+        "height": 145,
+        "strokeColor": "#DC143C",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            30
+          ],
+          [
+            -210,
+            30
+          ],
+          [
+            -210,
+            -115
+          ]
+        ],
+        "startBinding": {
+          "elementId": "error-rect",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step4-rect",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "retry-label",
+        "type": "text",
+        "x": 250,
+        "y": 650,
+        "width": 100,
+        "height": 20,
+        "strokeColor": "#DC143C",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Retry Payment",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "step5-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 710,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "5. Order Review",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "yes-label",
+        "type": "text",
+        "x": 95,
+        "y": 640,
+        "width": 30,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Yes",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-6",
+        "type": "arrow",
+        "x": 100,
+        "y": 645,
+        "width": 0,
+        "height": 65,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            65
+          ]
+        ],
+        "startBinding": {
+          "elementId": "payment-check",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step5-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "step6-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 820,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "6. Place Order",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-7",
+        "type": "arrow",
+        "x": 100,
+        "y": 780,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step5-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step6-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "step7-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 930,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "7. Confirmation",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-8",
+        "type": "arrow",
+        "x": 100,
+        "y": 890,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step6-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step7-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "step8-rect",
+        "type": "rectangle",
+        "x": 20,
+        "y": 1040,
+        "width": 160,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "8. Email Receipt",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-9",
+        "type": "arrow",
+        "x": 100,
+        "y": 1000,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step7-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "step8-rect",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "end-1",
+        "type": "ellipse",
+        "x": 50,
+        "y": 1150,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#FFB6C1",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "End",
+        "fontSize": 16,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-10",
+        "type": "arrow",
+        "x": 100,
+        "y": 1110,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "startBinding": {
+          "elementId": "step8-rect",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "end-1",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "title-text",
+        "type": "text",
+        "x": 50,
+        "y": -30,
+        "width": 300,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "E-Commerce Checkout Flow",
+        "fontSize": 24,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "legend-box-1",
+        "type": "rectangle",
+        "x": 250,
+        "y": 50,
+        "width": 150,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#E8F4F8",
+        "fillStyle": "solid",
+        "strokeWidth": 1,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Main Flow",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "legend-box-2",
+        "type": "rectangle",
+        "x": 250,
+        "y": 100,
+        "width": 150,
+        "height": 40,
+        "strokeColor": "#DC143C",
+        "backgroundColor": "#FFB6C1",
+        "fillStyle": "solid",
+        "strokeWidth": 1,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Error Path",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 37943
+  },
+  {
+    "testCaseId": "create-complex-04",
+    "input": "Draw a network topology with 1 router connected to 2 switches, where each switch is connected to 4 computers and 1 printer. Show the router connecting to the internet.",
+    "response": "Perfect! I've created a complete network topology diagram for you. Here's what the diagram shows:\n\n**Structure:**\n- **Internet** (blue ellipse) - Connected to the router\n- **Router** (yellow) - Central hub connecting to both switches\n- **Switch 1** (green) - Left switch connected to the router\n- **Switch 2** (green) - Right switch connected to the router\n\n**Connected Devices:**\n- Each switch connects to **4 computers** (light blue rectangles)\n- Each switch connects to **1 printer** (pink/red rectangles)\n\nThe diagram uses:\n- Different colors to distinguish device types for easy identification\n- Arrows showing the flow of connections\n- A hierarchical layout from top (Internet) to bottom (end devices)\n- Clear visual separation between the two switch networks\n\nYou can modify any element by selecting it and making changes, or let me know if you'd like to adjust colors, positions, or add any additional details!",
+    "elements": [
+      {
+        "id": "internet",
+        "type": "ellipse",
+        "x": 50,
+        "y": 20,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e7f5ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Internet",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "router",
+        "type": "rectangle",
+        "x": 200,
+        "y": 30,
+        "width": 80,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff3bf",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Router",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "switch1",
+        "type": "rectangle",
+        "x": 100,
+        "y": 150,
+        "width": 80,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#c0eb75",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Switch 1",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "switch2",
+        "type": "rectangle",
+        "x": 300,
+        "y": 150,
+        "width": 80,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#c0eb75",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Switch 2",
+        "fontSize": 14,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer1-1",
+        "type": "rectangle",
+        "x": 20,
+        "y": 280,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer1-2",
+        "type": "rectangle",
+        "x": 100,
+        "y": 280,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer1-3",
+        "type": "rectangle",
+        "x": 20,
+        "y": 340,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer1-4",
+        "type": "rectangle",
+        "x": 100,
+        "y": 340,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "printer1",
+        "type": "rectangle",
+        "x": 60,
+        "y": 400,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ffb3ba",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Printer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer2-1",
+        "type": "rectangle",
+        "x": 220,
+        "y": 280,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer2-2",
+        "type": "rectangle",
+        "x": 300,
+        "y": 280,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer2-3",
+        "type": "rectangle",
+        "x": 220,
+        "y": 340,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "computer2-4",
+        "type": "rectangle",
+        "x": 300,
+        "y": 340,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a5d8ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Computer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "printer2",
+        "type": "rectangle",
+        "x": 260,
+        "y": 400,
+        "width": 70,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ffb3ba",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Printer",
+        "fontSize": 12,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-internet-router",
+        "type": "arrow",
+        "x": 150,
+        "y": 45,
+        "width": 50,
+        "height": 15,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "internet",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "router",
+          "focus": -0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-router-switch1",
+        "type": "arrow",
+        "x": 200,
+        "y": 80,
+        "width": 120,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -100,
+            70
+          ]
+        ],
+        "startBinding": {
+          "elementId": "router",
+          "focus": -0.3,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "switch1",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-router-switch2",
+        "type": "arrow",
+        "x": 280,
+        "y": 80,
+        "width": 120,
+        "height": 70,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            100,
+            70
+          ]
+        ],
+        "startBinding": {
+          "elementId": "router",
+          "focus": 0.3,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "switch2",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch1-computer1",
+        "type": "arrow",
+        "x": 140,
+        "y": 200,
+        "width": 60,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -120,
+            80
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch1",
+          "focus": -0.4,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer1-1",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch1-computer2",
+        "type": "arrow",
+        "x": 140,
+        "y": 200,
+        "width": 60,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -40,
+            80
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch1",
+          "focus": -0.2,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer1-2",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch1-computer3",
+        "type": "arrow",
+        "x": 140,
+        "y": 200,
+        "width": 60,
+        "height": 140,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -120,
+            140
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch1",
+          "focus": -0.4,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer1-3",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch1-computer4",
+        "type": "arrow",
+        "x": 140,
+        "y": 200,
+        "width": 60,
+        "height": 140,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -40,
+            140
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch1",
+          "focus": -0.2,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer1-4",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch1-printer",
+        "type": "arrow",
+        "x": 140,
+        "y": 200,
+        "width": 80,
+        "height": 200,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -80,
+            200
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch1",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "printer1",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch2-computer1",
+        "type": "arrow",
+        "x": 340,
+        "y": 200,
+        "width": 120,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -120,
+            80
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch2",
+          "focus": -0.4,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer2-1",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch2-computer2",
+        "type": "arrow",
+        "x": 340,
+        "y": 200,
+        "width": 60,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -40,
+            80
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch2",
+          "focus": -0.2,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer2-2",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch2-computer3",
+        "type": "arrow",
+        "x": 340,
+        "y": 200,
+        "width": 120,
+        "height": 140,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -120,
+            140
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch2",
+          "focus": -0.4,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer2-3",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch2-computer4",
+        "type": "arrow",
+        "x": 340,
+        "y": 200,
+        "width": 60,
+        "height": 140,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -40,
+            140
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch2",
+          "focus": -0.2,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "computer2-4",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-switch2-printer",
+        "type": "arrow",
+        "x": 340,
+        "y": 200,
+        "width": 80,
+        "height": 200,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -80,
+            200
+          ]
+        ],
+        "startBinding": {
+          "elementId": "switch2",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "printer2",
+          "focus": 0.5,
+          "gap": 5
+        }
+      }
+    ],
+    "durationMs": 20346
+  },
+  {
+    "testCaseId": "modify-01",
+    "input": "make the login box red",
+    "response": "I don't see a current diagram on the canvas. Could you please either:\n\n1. Create a diagram first that includes a login box, or\n2. Provide me with the element id of the login box you'd like to make red\n\nIf you'd like me to create a login box diagram first, I can do that! Just let me know and I'll make it with a red login box.",
+    "elements": [],
+    "durationMs": 1641
+  },
+  {
+    "testCaseId": "modify-02",
+    "input": "now connect them with an arrow going from login to database",
+    "response": "I don't currently see a diagram on the canvas. Could you please either:\n\n1. Create a new diagram first with login and database elements, or\n2. Share the diagram you're referring to so I can add the arrow connection\n\nOnce you have a diagram with login and database elements, I'll be happy to connect them with an arrow!",
+    "elements": [],
+    "durationMs": 1463
+  },
+  {
+    "testCaseId": "modify-03",
+    "input": "rename the Process box to Validate",
+    "response": "I don't see a current diagram on the canvas yet. Could you please either:\n\n1. Create a diagram first that contains a \"Process\" box, or\n2. Provide me with the element id of the \"Process\" box you'd like to rename to \"Validate\"\n\nOnce you do, I'll be able to rename it for you right away!",
+    "elements": [],
+    "durationMs": 1329
+  },
+  {
+    "testCaseId": "modify-04",
+    "input": "add a Cache box between the API and the Database, and route the API through the cache",
+    "response": "I'd be happy to help you add a Cache box between the API and the Database! However, I don't see an existing diagram on the canvas yet. \n\nCould you either:\n1. **Describe your current diagram** - Tell me about the elements you have (e.g., where the API and Database boxes are positioned, their sizes, etc.)\n2. **Or let me create a new diagram** with API → Cache → Database flow\n\nWhich would you prefer?",
+    "elements": [],
+    "durationMs": 1944
+  },
+  {
+    "testCaseId": "domain-01",
+    "input": "Draw the OAuth 2.0 authorization code flow",
+    "response": "Perfect! I've created a comprehensive diagram of the **OAuth 2.0 Authorization Code Flow**. Here's what the diagram shows:\n\n## Key Components:\n1. **Resource Owner (User)** - The end-user who needs to authorize\n2. **Client (App)** - The application requesting access\n3. **Authorization Server** - Issues authorization codes and tokens\n4. **Resource Server** - Holds the protected resources\n\n## Flow Steps:\n1. **Login/Access** - User initiates login on the client app\n2. **Authorization Request** - Client redirects user to the authorization server\n3. **Authorization Code** - User grants consent and receives an authorization code\n4. **Token Request** - Client exchanges the code + secret with the authorization server (server-to-server, more secure)\n5. **Access Token** - Authorization server returns the access token\n6. **Access Token** - Client uses the token to request resources\n7. **Protected Resource** - Resource server returns the protected resource\n\n## Key Features:\n- User is redirected to the authorization server for consent\n- Authorization code is short-lived and single-use\n- Token exchange happens server-to-server (more secure than in-browser)\n- Access token is used for protected resources; refresh token extends the session without re-authentication\n\nThis flow is considered the most secure OAuth 2.0 flow because the user's credentials are never shared with the client app!",
+    "elements": [
+      {
+        "id": "title",
+        "type": "text",
+        "x": 400,
+        "y": 20,
+        "width": 300,
+        "height": 30,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "OAuth 2.0 Authorization Code Flow",
+        "fontSize": 24,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "resource-owner",
+        "type": "rectangle",
+        "x": 50,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e8f5e9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Resource Owner\n(User)",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "client",
+        "type": "rectangle",
+        "x": 350,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e3f2fd",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Client\n(App)",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "auth-server",
+        "type": "rectangle",
+        "x": 650,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff3e0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Authorization\nServer",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "resource-server",
+        "type": "rectangle",
+        "x": 850,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fce4ec",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Resource\nServer",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-1",
+        "type": "arrow",
+        "x": 170,
+        "y": 135,
+        "width": 180,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            180,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "label-1",
+        "type": "text",
+        "x": 235,
+        "y": 115,
+        "width": 80,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "1. Login/Access",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-2",
+        "type": "arrow",
+        "x": 410,
+        "y": 160,
+        "width": 280,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            280,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "label-2",
+        "type": "text",
+        "x": 520,
+        "y": 140,
+        "width": 120,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "2. Authorization Request",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-3",
+        "type": "arrow",
+        "x": 410,
+        "y": 160,
+        "width": 280,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            280,
+            40
+          ],
+          [
+            0,
+            80
+          ]
+        ]
+      },
+      {
+        "id": "label-3",
+        "type": "text",
+        "x": 510,
+        "y": 200,
+        "width": 180,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "3. Authorization Code",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "step-3-box",
+        "type": "rectangle",
+        "x": 200,
+        "y": 270,
+        "width": 300,
+        "height": 60,
+        "strokeColor": "#999999",
+        "backgroundColor": "#f5f5f5",
+        "fillStyle": "hachure",
+        "strokeWidth": 1,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Receives code via callback\nURL redirect",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-4",
+        "type": "arrow",
+        "x": 410,
+        "y": 360,
+        "width": 280,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            280,
+            40
+          ]
+        ]
+      },
+      {
+        "id": "label-4",
+        "type": "text",
+        "x": 510,
+        "y": 350,
+        "width": 180,
+        "height": 30,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "4. Token Request\n(code + secret)",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-5",
+        "type": "arrow",
+        "x": 410,
+        "y": 420,
+        "width": 280,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            280,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      },
+      {
+        "id": "label-5",
+        "type": "text",
+        "x": 510,
+        "y": 410,
+        "width": 180,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "5. Access Token",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-6",
+        "type": "arrow",
+        "x": 470,
+        "y": 460,
+        "width": 380,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            380,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "label-6",
+        "type": "text",
+        "x": 610,
+        "y": 440,
+        "width": 140,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "6. Access Token",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-7",
+        "type": "arrow",
+        "x": 470,
+        "y": 500,
+        "width": 380,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            380,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "label-7",
+        "type": "text",
+        "x": 610,
+        "y": 500,
+        "width": 140,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "7. Protected Resource",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "key-info",
+        "type": "rectangle",
+        "x": 50,
+        "y": 560,
+        "width": 920,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f0f0f0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "left"
+      },
+      {
+        "id": "key-title",
+        "type": "text",
+        "x": 60,
+        "y": 570,
+        "width": 900,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Key Features:",
+        "fontSize": 13,
+        "fontFamily": 2,
+        "textAlign": "left"
+      },
+      {
+        "id": "key-text",
+        "type": "text",
+        "x": 60,
+        "y": 595,
+        "width": 900,
+        "height": 60,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "• User is redirected to authorization server to grant consent\n• Authorization code is short-lived and single-use\n• Token exchange happens server-to-server (more secure than in-browser)\n• Access token used to access protected resources; refresh token extends session",
+        "fontSize": 11,
+        "fontFamily": 2,
+        "textAlign": "left"
+      }
+    ],
+    "durationMs": 27754
+  },
+  {
+    "testCaseId": "domain-02",
+    "input": "Draw the AWS three-tier web application architecture",
+    "response": "Perfect! I've created a comprehensive diagram of the AWS three-tier web application architecture. Here's what each tier includes:\n\n## **Presentation Tier (Left)** - Content Delivery\n- **Route 53**: DNS service for domain name resolution\n- **CloudFront**: CDN for caching and fast content delivery globally\n- **Application Load Balancer**: Distributes incoming traffic across EC2 instances\n\n## **Application Tier (Middle)** - Business Logic\n- **EC2 Instances (3)**: Virtual servers running your application code with auto-scaling capability for handling varying loads\n\n## **Data Tier (Right)** - Storage & Caching\n- **RDS**: Managed relational database (MySQL/PostgreSQL) for persistent data storage\n- **ElastiCache**: In-memory caching layer (Redis) for improved performance\n- **S3**: Object storage for static files, backups, and media assets\n\nThe arrows show the typical data flow from users through the presentation tier, to the application tier, and finally to the data tier. This architecture provides scalability, high availability, and separation of concerns for a robust web application.",
+    "elements": [
+      {
+        "id": "title",
+        "type": "text",
+        "x": 400,
+        "y": 20,
+        "width": 400,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 0,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "AWS Three-Tier Web Application Architecture",
+        "fontSize": 24,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "users",
+        "type": "ellipse",
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#e8f4f8",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Users",
+        "fontSize": 16,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "presentation-label",
+        "type": "text",
+        "x": 50,
+        "y": 200,
+        "width": 200,
+        "height": 30,
+        "strokeColor": "#d4a574",
+        "backgroundColor": "#fef5e7",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Presentation Tier",
+        "fontSize": 18,
+        "fontFamily": 2,
+        "textAlign": "left"
+      },
+      {
+        "id": "route53",
+        "type": "rectangle",
+        "x": 80,
+        "y": 270,
+        "width": 140,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff4e6",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Route 53\n(DNS)",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "cloudfront",
+        "type": "rectangle",
+        "x": 80,
+        "y": 360,
+        "width": 140,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff4e6",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "CloudFront\n(CDN)",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "alb",
+        "type": "rectangle",
+        "x": 80,
+        "y": 450,
+        "width": 140,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff4e6",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Application\nLoad Balancer",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "application-label",
+        "type": "text",
+        "x": 370,
+        "y": 200,
+        "width": 200,
+        "height": 30,
+        "strokeColor": "#7fb3d5",
+        "backgroundColor": "#ebf5fb",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Application Tier",
+        "fontSize": 18,
+        "fontFamily": 2,
+        "textAlign": "left"
+      },
+      {
+        "id": "ec2-1",
+        "type": "rectangle",
+        "x": 340,
+        "y": 270,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ebf5fb",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "EC2\nInstance 1",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "ec2-2",
+        "type": "rectangle",
+        "x": 340,
+        "y": 360,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ebf5fb",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "EC2\nInstance 2",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "ec2-3",
+        "type": "rectangle",
+        "x": 340,
+        "y": 450,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ebf5fb",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "EC2\nInstance 3",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "data-label",
+        "type": "text",
+        "x": 650,
+        "y": 200,
+        "width": 200,
+        "height": 30,
+        "strokeColor": "#a9ccbd",
+        "backgroundColor": "#eafaf1",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Data Tier",
+        "fontSize": 18,
+        "fontFamily": 2,
+        "textAlign": "left"
+      },
+      {
+        "id": "rds",
+        "type": "rectangle",
+        "x": 640,
+        "y": 270,
+        "width": 140,
+        "height": 80,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#eafaf1",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "RDS\n(MySQL/\nPostgreSQL)",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "elasticache",
+        "type": "rectangle",
+        "x": 640,
+        "y": 400,
+        "width": 140,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#eafaf1",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "ElastiCache\n(Redis)",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "s3",
+        "type": "rectangle",
+        "x": 640,
+        "y": 510,
+        "width": 140,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#eafaf1",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "S3\n(Storage)",
+        "fontSize": 14,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-users-route53",
+        "type": "arrow",
+        "x": 375,
+        "y": 160,
+        "width": 50,
+        "height": 110,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            25,
+            0
+          ],
+          [
+            25,
+            110
+          ]
+        ],
+        "startBinding": {
+          "elementId": "users",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "route53",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-route53-cloudfront",
+        "type": "arrow",
+        "x": 150,
+        "y": 330,
+        "width": 20,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "startBinding": {
+          "elementId": "route53",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "cloudfront",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-cloudfront-alb",
+        "type": "arrow",
+        "x": 150,
+        "y": 420,
+        "width": 20,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "startBinding": {
+          "elementId": "cloudfront",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "alb",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-alb-ec2-1",
+        "type": "arrow",
+        "x": 220,
+        "y": 285,
+        "width": 120,
+        "height": 15,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            7.5
+          ],
+          [
+            120,
+            7.5
+          ]
+        ],
+        "startBinding": {
+          "elementId": "alb",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "ec2-1",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-alb-ec2-2",
+        "type": "arrow",
+        "x": 220,
+        "y": 480,
+        "width": 120,
+        "height": 15,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            -7.5
+          ],
+          [
+            120,
+            7.5
+          ]
+        ],
+        "startBinding": {
+          "elementId": "alb",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "ec2-2",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-alb-ec2-3",
+        "type": "arrow",
+        "x": 220,
+        "y": 480,
+        "width": 120,
+        "height": 15,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            120,
+            0
+          ]
+        ],
+        "startBinding": {
+          "elementId": "alb",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "ec2-3",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-ec2-rds",
+        "type": "arrow",
+        "x": 460,
+        "y": 300,
+        "width": 180,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            180,
+            10
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ec2-1",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "rds",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-ec2-elasticache",
+        "type": "arrow",
+        "x": 460,
+        "y": 390,
+        "width": 180,
+        "height": 20,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            180,
+            10
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ec2-2",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "elasticache",
+          "focus": 0.5,
+          "gap": 0
+        }
+      },
+      {
+        "id": "arrow-ec2-s3",
+        "type": "arrow",
+        "x": 460,
+        "y": 480,
+        "width": 180,
+        "height": 30,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            180,
+            30
+          ]
+        ],
+        "startBinding": {
+          "elementId": "ec2-3",
+          "focus": 0.5,
+          "gap": 0
+        },
+        "endBinding": {
+          "elementId": "s3",
+          "focus": 0.5,
+          "gap": 0
+        }
+      }
+    ],
+    "durationMs": 19249
+  },
+  {
+    "testCaseId": "domain-03",
+    "input": "Draw the relationship between a Kubernetes Pod, Service, and Deployment",
+    "response": "I've created a diagram showing the relationship between Kubernetes Pod, Service, and Deployment. Here's what the diagram illustrates:\n\n**Hierarchy and Relationships:**\n\n1. **Deployment** (blue, top): The declarative way to describe desired state for applications. It specifies how many replicas you want and what container image to use.\n\n2. **ReplicaSet** (purple, middle): Created and managed by the Deployment. It ensures the specified number of Pod replicas are running at all times.\n\n3. **Pods** (orange, bottom): The smallest deployable units in Kubernetes, containing one or more containers. The ReplicaSet creates and manages multiple Pods.\n\n4. **Service** (green, right side): Provides stable networking for Pods. It abstracts the Pods and routes traffic to them, so clients don't need to track individual Pod IP addresses. This is important because Pods are ephemeral and their IPs can change.\n\n**Key Relationships:**\n- Deployment → manages → ReplicaSet\n- ReplicaSet → creates → Pods\n- Service → routes traffic to → Pods (using label selectors)\n\nThe Service is the key to decoupling: even as Pods are created and destroyed, the Service provides a stable endpoint for accessing the application.",
+    "elements": [
+      {
+        "id": "deployment-box",
+        "type": "rectangle",
+        "x": 50,
+        "y": 50,
+        "width": 200,
+        "height": 80,
+        "strokeColor": "#1976d2",
+        "backgroundColor": "#e3f2fd",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Deployment",
+        "fontSize": 18,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "replicaset-box",
+        "type": "rectangle",
+        "x": 50,
+        "y": 180,
+        "width": 200,
+        "height": 80,
+        "strokeColor": "#7b1fa2",
+        "backgroundColor": "#f3e5f5",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "ReplicaSet",
+        "fontSize": 18,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "pod1-box",
+        "type": "rectangle",
+        "x": 20,
+        "y": 310,
+        "width": 130,
+        "height": 70,
+        "strokeColor": "#f57c00",
+        "backgroundColor": "#fff3e0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Pod 1",
+        "fontSize": 16,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "pod2-box",
+        "type": "rectangle",
+        "x": 170,
+        "y": 310,
+        "width": 130,
+        "height": 70,
+        "strokeColor": "#f57c00",
+        "backgroundColor": "#fff3e0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Pod 2",
+        "fontSize": 16,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "service-box",
+        "type": "rectangle",
+        "x": 380,
+        "y": 180,
+        "width": 200,
+        "height": 80,
+        "strokeColor": "#388e3c",
+        "backgroundColor": "#e8f5e9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Service",
+        "fontSize": 18,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-deploy-rs",
+        "type": "arrow",
+        "x": 150,
+        "y": 130,
+        "width": 0,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "startBinding": {
+          "elementId": "deployment-box",
+          "focus": 0,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "replicaset-box",
+          "focus": 0,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-rs-pod1",
+        "type": "arrow",
+        "x": 100,
+        "y": 260,
+        "width": 0,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -30,
+            50
+          ]
+        ],
+        "startBinding": {
+          "elementId": "replicaset-box",
+          "focus": -0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "pod1-box",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-rs-pod2",
+        "type": "arrow",
+        "x": 200,
+        "y": 260,
+        "width": 0,
+        "height": 50,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            30,
+            50
+          ]
+        ],
+        "startBinding": {
+          "elementId": "replicaset-box",
+          "focus": 0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "pod2-box",
+          "focus": -0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-svc-pod1",
+        "type": "arrow",
+        "x": 380,
+        "y": 240,
+        "width": 200,
+        "height": 100,
+        "strokeColor": "#388e3c",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -200,
+            100
+          ]
+        ],
+        "startBinding": {
+          "elementId": "service-box",
+          "focus": -0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "pod1-box",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "arrow-svc-pod2",
+        "type": "arrow",
+        "x": 480,
+        "y": 260,
+        "width": 200,
+        "height": 100,
+        "strokeColor": "#388e3c",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -200,
+            50
+          ]
+        ],
+        "startBinding": {
+          "elementId": "service-box",
+          "focus": -0.5,
+          "gap": 5
+        },
+        "endBinding": {
+          "elementId": "pod2-box",
+          "focus": 0.5,
+          "gap": 5
+        }
+      },
+      {
+        "id": "label-manages",
+        "type": "text",
+        "x": 220,
+        "y": 145,
+        "width": 60,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "manages",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "label-creates",
+        "type": "text",
+        "x": 50,
+        "y": 280,
+        "width": 60,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "creates",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      },
+      {
+        "id": "label-routes-to",
+        "type": "text",
+        "x": 320,
+        "y": 300,
+        "width": 60,
+        "height": 20,
+        "strokeColor": "transparent",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "routes to",
+        "fontSize": 12,
+        "fontFamily": 2,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 12290
+  },
+  {
+    "testCaseId": "edge-01",
+    "input": "draw something",
+    "response": "I've created a simple flowchart for you! It shows a decision-making process with:\n- A **Start** box (blue)\n- A **Decision diamond** asking \"Do you want to continue?\"\n- A **Process** box (green) for the \"yes\" path\n- An **End** box (coral)\n- An alternative **Stop** box (pink) for the \"no\" path\n\nFeel free to ask me to modify any part of it, add more elements, or create something completely different!",
+    "elements": [
+      {
+        "id": "rect-1",
+        "type": "rectangle",
+        "x": 100,
+        "y": 50,
+        "width": 200,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#a8d5ff",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Start",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-1",
+        "type": "arrow",
+        "x": 200,
+        "y": 110,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      },
+      {
+        "id": "diamond-1",
+        "type": "diamond",
+        "x": 100,
+        "y": 150,
+        "width": 200,
+        "height": 100,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#fff9c4",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Do you\nwant to\ncontinue?",
+        "fontSize": 16,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-2",
+        "type": "arrow",
+        "x": 200,
+        "y": 250,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      },
+      {
+        "id": "rect-2",
+        "type": "rectangle",
+        "x": 100,
+        "y": 290,
+        "width": 200,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#c8e6c9",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Process",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-3",
+        "type": "arrow",
+        "x": 200,
+        "y": 350,
+        "width": 0,
+        "height": 40,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      },
+      {
+        "id": "rect-3",
+        "type": "rectangle",
+        "x": 100,
+        "y": 390,
+        "width": 200,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#ffccbc",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "End",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "arrow-4",
+        "type": "arrow",
+        "x": 300,
+        "y": 200,
+        "width": 80,
+        "height": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            80,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "rect-4",
+        "type": "rectangle",
+        "x": 380,
+        "y": 170,
+        "width": 120,
+        "height": 60,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "#f8bbd0",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "text": "Stop",
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 10203
+  },
+  {
+    "testCaseId": "edge-02",
+    "input": "Draw a square that is also a circle",
+    "response": "Perfect! I've drawn a square and a circle that overlap perfectly. Since both shapes have the same width and height (200x200) and are positioned at the same location, they create an interesting visual where a square is also a circle - mathematically, it's where a circle's diameter equals the square's diagonal. The shapes are displayed on top of each other, creating a unique geometric composition.",
+    "elements": [
+      {
+        "id": "square-1",
+        "type": "rectangle",
+        "x": 100,
+        "y": 100,
+        "width": 200,
+        "height": 200,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      },
+      {
+        "id": "circle-1",
+        "type": "ellipse",
+        "x": 100,
+        "y": 100,
+        "width": 200,
+        "height": 200,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "roughness": 1,
+        "opacity": 100,
+        "fontSize": 20,
+        "fontFamily": 1,
+        "textAlign": "center"
+      }
+    ],
+    "durationMs": 3971
+  }
+]
