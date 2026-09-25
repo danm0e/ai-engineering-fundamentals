@@ -16,6 +16,7 @@
     "@ai-sdk/anthropic": "^3.0.118",
     "@cloudflare/ai-chat": "^0.3.2",
     "@excalidraw/excalidraw": "^0.18.0",
+    "@types/node": "^26.6.2",
     "agents": "^0.9.0",
     "ai": "^6.0.146",
     "react": "^19.0.0",
