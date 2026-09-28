@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
 import {
   convertToExcalidrawElements,
@@ -37,6 +37,20 @@ export default function App() {
   // It gives us the messages array, a sendMessage function, and a status.
   const { messages, sendMessage, status } = useAgentChat({ agent });
 
+  const sendWithCanvas = useMemo(
+    () => (msg: { role: "user"; parts: { type: "text"; text: string }[] }) => {
+      const elements = excalidrawAPI?.getSceneElements() ?? [];
+      sendMessage({
+        ...msg,
+        parts: [
+          ...msg.parts,
+          { type: "data-canvas-state", data: { elements } } as never,
+        ],
+      });
+    },
+    [sendMessage, excalidrawAPI],
+  );
+
   // Watch messages for tool outputs and apply them to the canvas. We handle
   // both tools the agent has: generateDiagram (replace canvas) and
   // modifyDiagram (patch a single existing element by id).
@@ -68,7 +82,7 @@ export default function App() {
             // the agent's chosen ids) silently misses every element.
             const elements = convertToExcalidrawElements(
               skeletonElements as any,
-              { regenerateIds: false }
+              { regenerateIds: false },
             );
             excalidrawAPI.updateScene({ elements });
             excalidrawAPI.scrollToContent(elements, { fitToContent: true });
@@ -89,7 +103,7 @@ export default function App() {
             const next = current.map((el) =>
               el.id === output.elementId
                 ? newElementWith(el, output.updates as never)
-                : el
+                : el,
             );
             excalidrawAPI.updateScene({
               elements: next,
@@ -108,10 +122,14 @@ export default function App() {
       </div>
       <ChatPanel
         messages={messages}
-        sendMessage={sendMessage}
+        sendMessage={sendWithCanvas}
         status={status}
       />
-      <a href="#viewer" className="viewer-launch" title="Open diagram viewer for human scoring">
+      <a
+        href="#viewer"
+        className="viewer-launch"
+        title="Open diagram viewer for human scoring"
+      >
         viewer
       </a>
     </div>
