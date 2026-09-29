@@ -10,12 +10,21 @@ import { useAgentChat } from "@cloudflare/ai-chat/react";
 import Canvas from "./components/Canvas";
 import ChatPanel from "./components/chat/ChatPanel";
 import "./App.css";
+import { serializeCanvasState } from "./context/canvas-state";
 
 // One agent instance per page load. The canvas state lives only in the
 // browser, so persisting chat history across refreshes would leave a dead
 // conversation referencing diagrams that no longer exist. Generated at the
 // module level so React StrictMode's double mount doesn't change it.
 const sessionId = crypto.randomUUID();
+
+function stripNulls(obj: Record<string, unknown>): Record<string, unknown> {
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(obj)) {
+    if (v !== null) out[k] = v;
+  }
+  return out;
+}
 
 export default function App() {
   const [excalidrawAPI, setExcalidrawAPI] =
@@ -25,6 +34,11 @@ export default function App() {
   // Track which tool calls we have already applied to the canvas so we
   // don't apply the same elements twice as messages re-render.
   const appliedToolCalls = useRef<Set<string>>(new Set());
+  const excalidrawAPIRef = useRef<ExcalidrawImperativeAPI | null>(null);
+
+  useEffect(() => {
+    excalidrawAPIRef.current = excalidrawAPI;
+  }, [excalidrawAPI]);
 
   const handleApiReady = useCallback((api: ExcalidrawImperativeAPI) => {
     setExcalidrawAPI(api);
@@ -35,7 +49,87 @@ export default function App() {
 
   // useAgentChat manages the chat protocol on top of the agent connection.
   // It gives us the messages array, a sendMessage function, and a status.
-  const { messages, sendMessage, status } = useAgentChat({ agent });
+  const { messages, sendMessage, status } = useAgentChat({
+    agent,
+    onToolCall: async ({ toolCall, addToolOutput }) => {
+      const api = excalidrawAPIRef.current;
+      if (!api) {
+        addToolOutput({
+          toolCallId: toolCall.toolCallId,
+          output: { error: "canvas not ready" },
+        });
+        return;
+      }
+
+      if (toolCall.toolName === "queryCanvas") {
+        addToolOutput({
+          toolCallId: toolCall.toolCallId,
+          output: {
+            summary: serializeCanvasState(api.getSceneElements() as any),
+          },
+        });
+      }
+
+      if (toolCall.toolName === "addElements") {
+        const { elements } = toolCall.input as any;
+        const cleaned = elements.map(stripNulls);
+        const newOnes = convertToExcalidrawElements(cleaned, {
+          regenerateIds: false,
+        });
+        const next = [...api.getSceneElements(), ...newOnes];
+        api.updateScene({
+          elements: next,
+          captureUpdate: CaptureUpdateAction.IMMEDIATELY,
+        });
+        api.scrollToContent(next, { fitToContent: true });
+        addToolOutput({
+          toolCallId: toolCall.toolCallId,
+          output: { added: newOnes.length },
+        });
+        return;
+      }
+
+      if (toolCall.toolName === "updateElements") {
+        const { updates } = toolCall.input as any;
+        const byId = new Map(
+          updates.map((update) => [update.id, stripNulls(update.fields)]),
+        );
+        const next = api.getSceneElements().map((el) => {
+          const fields = byId.get(el.id);
+          return fields && Object.keys(fields).length > 0
+            ? newElementWith(el, fields)
+            : el;
+        });
+
+        api.updateScene({
+          elements: next,
+          captureUpdate: CaptureUpdateAction.IMMEDIATELY,
+        });
+
+        addToolOutput({
+          toolCallId: toolCall.toolCallId,
+          output: { updated: byId.size },
+        });
+
+        return;
+      }
+
+      if (toolCall.toolName === "removeElements") {
+        const { ids } = toolCall.input as any;
+        const remove = new Set(ids);
+        const next = api.getSceneElements().filter((el) => !remove.has(el.id));
+        api.updateScene({
+          elements: next,
+          captureUpdate: CaptureUpdateAction.IMMEDIATELY,
+        });
+        addToolOutput({
+          toolCallId: toolCall.toolCallId,
+          output: { removed: remove.size },
+        });
+        return;
+      }
+    },
+  });
 
   // Wrap sendMessage so every outgoing user message also carries a snapshot
   // of the current canvas state in a data-canvas-state part. The worker
@@ -44,18 +138,17 @@ export default function App() {
   // later lesson will replace it with a client side tool the agent can
   // call directly when it actually needs the info.
   const sendWithCanvas = useMemo(
-    () =>
-      (msg: { role: "user"; parts: { type: "text"; text: string }[] }) => {
-        const elements = excalidrawAPI?.getSceneElements() ?? [];
-        sendMessage({
-          ...msg,
-          parts: [
-            ...msg.parts,
-            { type: "data-canvas-state", data: { elements } } as never,
-          ],
-        });
-      },
-    [sendMessage, excalidrawAPI]
+    () => (msg: { role: "user"; parts: { type: "text"; text: string }[] }) => {
+      const elements = excalidrawAPI?.getSceneElements() ?? [];
+      sendMessage({
+        ...msg,
+        parts: [
+          ...msg.parts,
+          { type: "data-canvas-state", data: { elements } } as never,
+        ],
+      });
+    },
+    [sendMessage, excalidrawAPI],
   );
 
   // Watch messages for tool outputs and apply them to the canvas. We handle
@@ -89,7 +182,7 @@ export default function App() {
             // the agent's chosen ids) silently misses every element.
             const elements = convertToExcalidrawElements(
               skeletonElements as any,
-              { regenerateIds: false }
+              { regenerateIds: false },
             );
             excalidrawAPI.updateScene({ elements });
             excalidrawAPI.scrollToContent(elements, { fitToContent: true });
@@ -110,7 +203,7 @@ export default function App() {
             const next = current.map((el) =>
               el.id === output.elementId
                 ? newElementWith(el, output.updates as never)
-                : el
+                : el,
             );
             excalidrawAPI.updateScene({
               elements: next,
@@ -129,10 +222,17 @@ export default function App() {
       </div>
       <ChatPanel
         messages={messages}
-        sendMessage={sendWithCanvas}
+        // turning off the canvas visibility for now to see if the model calls the tool or not
+        // given our crud tooling improvements
+        // sendMessage={sendWithCanvas}
+        sendMessage={sendMessage}
         status={status}
       />
-      <a href="#viewer" className="viewer-launch" title="Open diagram viewer for human scoring">
+      <a
+        href="#viewer"
+        className="viewer-launch"
+        title="Open diagram viewer for human scoring"
+      >
         viewer
       </a>
     </div>

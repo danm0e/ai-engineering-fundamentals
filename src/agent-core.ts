@@ -10,7 +10,7 @@ import {
   type LanguageModel,
   type ModelMessage,
 } from "ai";
-import { tools } from "./tools";
+import { buildTools } from "./tools";
 import { serializeCanvasState } from "./context/canvas-state";
 import type { ExcalidrawElement } from "./schemas";
 
@@ -119,7 +119,10 @@ interface AgentArgs {
   maxSteps?: number;
 }
 
-function buildSystem(base: string, canvasState: ExcalidrawElement[] | undefined): string {
+function buildSystem(
+  base: string,
+  canvasState: ExcalidrawElement[] | undefined,
+): string {
   return `${base}\n\n# Current canvas state\n\n${serializeCanvasState(canvasState ?? [])}`;
 }
 
@@ -135,7 +138,7 @@ export function streamAgent({
     model,
     system: buildSystem(system, canvasState),
     messages,
-    tools,
+    tools: buildTools(),
     stopWhen: stepCountIs(maxSteps),
   });
 }
@@ -153,7 +156,7 @@ export async function runAgent({
     model,
     system: buildSystem(system, canvasState),
     messages,
-    tools,
+    tools: buildTools(),
     stopWhen: stepCountIs(maxSteps),
   });
   return {
@@ -183,17 +186,17 @@ interface StepLike {
 }
 
 export function extractElements(steps: StepLike[], initial: any[] = []): any[] {
-  let canvas = [...initial]
+  let canvas = [...initial];
 
   for (const step of steps) {
     for (const toolResult of step.toolResults ?? []) {
       if (toolResult.toolName === "generateDiagram") {
-        const output = toolResult.output as any
+        const output = toolResult.output as any;
         if (Array.isArray(output?.elements)) {
-          canvas = [...output.elements]
+          canvas = [...output.elements];
         }
       } else if (toolResult.toolName === "modifyDiagram") {
-        const output = toolResult.output as any
+        const output = toolResult.output as any;
         if (typeof output?.elementId === "string" && output.updates) {
           const target = canvas.find((el) => el.id === output.elementId);
           if (target) Object.assign(target, output.updates);

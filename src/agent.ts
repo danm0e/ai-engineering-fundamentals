@@ -1,8 +1,8 @@
 import { AIChatAgent } from "@cloudflare/ai-chat";
-import { convertToModelMessages, type UIMessage } from "ai";
+import { convertToModelMessages } from "ai"; // , type UIMessage
 import { createAnthropic } from "@ai-sdk/anthropic";
 import { streamAgent } from "./agent-core";
-import type { ExcalidrawElement } from "./schemas";
+// import type { ExcalidrawElement } from "./schemas";
 
 interface Env extends Cloudflare.Env {
   OPENAI_API_KEY: string;
@@ -14,31 +14,32 @@ interface Env extends Cloudflare.Env {
 // in the Cloudflare AI Chat protocol, since useAgentChat / AIChatAgent only
 // understand UIMessage on the wire. onChatMessage runs because the user
 // sent a message, so the last message in the array is always theirs.
-type CanvasStatePart = {
-  type: "data-canvas-state";
-  data: { elements: ExcalidrawElement[] };
-};
+// type CanvasStatePart = {
+//   type: "data-canvas-state";
+//   data: { elements: ExcalidrawElement[] };
+// };
 
-function extractCanvasState(messages: UIMessage[]): ExcalidrawElement[] {
-  const last = messages.at(-1);
-  const part = last?.parts.find(
-    (p): p is CanvasStatePart => (p as { type?: string }).type === "data-canvas-state"
-  );
-  return part?.data.elements ?? [];
-}
+// function extractCanvasState(messages: UIMessage[]): ExcalidrawElement[] {
+//   const last = messages.at(-1);
+//   const part = last?.parts.find(
+//     (p): p is CanvasStatePart =>
+//       (p as { type?: string }).type === "data-canvas-state",
+//   );
+//   return part?.data.elements ?? [];
+// }
 
 export class DesignAgent extends AIChatAgent<Env> {
   async onChatMessage() {
     const anthropic = createAnthropic({ apiKey: this.env.OPENAI_API_KEY });
     const model = anthropic("claude-haiku-4-5-20251001");
 
-    const canvasState = extractCanvasState(this.messages);
+    // const canvasState = extractCanvasState(this.messages);
     const messages = await convertToModelMessages(this.messages);
 
     const result = streamAgent({
       model,
       messages,
-      canvasState,
+      // canvasState,
     });
 
     return result.toUIMessageStreamResponse();
