@@ -1,31 +1,31 @@
 import { tool } from "ai";
 import { z } from "zod";
+import { styleSchema } from "./element-schema";
 
 // Client side tool: no execute. The browser fulfills it via onToolCall, which
-// also strips the null fields before applying. We use nullable rather than
-// optional so OpenAI strict mode stays on. Null means "leave this field alone."
+// also strips undefined fields before applying. Style properties are
+// bundled into one optional `style` object (shared with element-schema.ts)
+// rather than six individually optional fields, since Anthropic caps the
+// number of optional/union-typed parameters per request. The cost: changing
+// any one style property means resending the whole group (call queryCanvas
+// first if you don't already know the element's current values).
 
 const updateFields = z.object({
-  x: z.number().nullable(),
-  y: z.number().nullable(),
-  width: z.number().nullable(),
-  height: z.number().nullable(),
-  text: z.string().nullable(),
-  fontSize: z.number().nullable(),
-  textAlign: z.enum(["left", "center", "right"]).nullable(),
-  strokeColor: z.string().nullable(),
-  backgroundColor: z.string().nullable(),
-  fillStyle: z.enum(["solid", "hachure", "cross-hatch"]).nullable(),
-  strokeWidth: z.number().nullable(),
-  roughness: z.number().nullable(),
-  opacity: z.number().nullable(),
+  x: z.number().optional(),
+  y: z.number().optional(),
+  width: z.number().optional(),
+  height: z.number().optional(),
+  text: z.string().optional(),
+  fontSize: z.number().optional(),
+  textAlign: z.enum(["left", "center", "right"]).optional(),
+  style: styleSchema.optional(),
 });
 
 export const updateElements = tool({
-  description: `Update one or more existing elements by id. Pass null for any field you don't want to change. Only use ids that exist on the canvas, call queryCanvas first if you're not sure.
+  description: `Update one or more existing elements by id. Omit any field you don't want to change. Only use ids that exist on the canvas, call queryCanvas first if you're not sure.
 
 Example: updateElements({ updates: [
-  { id: "rect_login", fields: { backgroundColor: "#fa5252", x: null, y: null, width: null, height: null, text: null, fontSize: null, textAlign: null, strokeColor: null, fillStyle: null, strokeWidth: null, roughness: null, opacity: null } }
+  { id: "rect_login", fields: { style: { strokeColor: "#1e1e1e", backgroundColor: "#fa5252", fillStyle: "hachure", strokeWidth: 1, roughness: 1, opacity: 100 } } }
 ]})`,
   inputSchema: z.object({
     updates: z.array(

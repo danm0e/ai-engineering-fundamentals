@@ -19,12 +19,11 @@ import "./App.css";
 // conversation referencing diagrams that no longer exist.
 const sessionId = crypto.randomUUID();
 
-// Recursively drop null valued fields. Our tool schemas use nullable
-// rather than optional so OpenAI strict mode stays on, which means the
-// agent always sends every field. The Excalidraw skeleton helper expects
+// Recursively drop null valued fields. Our tool schemas use optional
+// fields now, so this is mostly a no-op safety net; kept in case a field
+// is ever nullable again. The Excalidraw skeleton helper expects
 // undefined for "use the default," not null, and chokes on `label: null`
-// or `start: null`. Recursion is required because nested objects (label,
-// start, end) also carry nullable fields like fontSize and textAlign.
+// or `start: null`.
 function stripNulls(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stripNulls);
   if (value && typeof value === "object") {
@@ -35,6 +34,18 @@ function stripNulls(value: unknown): unknown {
     return out;
   }
   return value;
+}
+
+// The `style` object bundles strokeColor/backgroundColor/fillStyle/
+// strokeWidth/roughness/opacity into one optional parameter (see
+// element-schema.ts for why), but `convertToExcalidrawElements` and
+// `newElementWith` expect those properties flat. Unwrap it before handing
+// elements/fields off to Excalidraw.
+function flattenStyle(value: Record<string, unknown>): Record<string, unknown> {
+  const { style, ...rest } = value;
+  return style && typeof style === "object"
+    ? { ...rest, ...(style as Record<string, unknown>) }
+    : rest;
 }
 
 export default function App() {
@@ -76,13 +87,14 @@ export default function App() {
       }
 
       if (toolCall.toolName === "addElements") {
-        const { elements } = toolCall.input as { elements: unknown[] };
-        // Strip null fields recursively before handing to
-        // convertToExcalidrawElements. Our nullable schema forces the model
-        // to send every field, but the skeleton helper expects undefined
-        // (not null) for "use the default" and chokes on `label: null` or
-        // `start: null`.
-        const cleaned = elements.map(stripNulls) as Record<string, unknown>[];
+        const { elements } = toolCall.input as { elements: Record<string, unknown>[] };
+        // Unwrap the bundled `style` object and strip any null fields
+        // before handing to convertToExcalidrawElements, which expects
+        // style properties flat and undefined (not null) for defaults.
+        const cleaned = elements.map((el) => stripNulls(flattenStyle(el))) as Record<
+          string,
+          unknown
+        >[];
         const newOnes = convertToExcalidrawElements(cleaned as never, { regenerateIds: false });
 
         // Patch arrow bindings that reference shapes already on the canvas
@@ -124,7 +136,10 @@ export default function App() {
           updates: { id: string; fields: Record<string, unknown> }[];
         };
         const byId = new Map(
-          updates.map((u) => [u.id, stripNulls(u.fields) as Record<string, unknown>])
+          updates.map((u) => [
+            u.id,
+            stripNulls(flattenStyle(u.fields)) as Record<string, unknown>,
+          ])
         );
         const next = api.getSceneElements().map((el) => {
           const fields = byId.get(el.id);

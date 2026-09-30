@@ -20,27 +20,45 @@ import { z } from "zod";
 // element that drops its label or floats its arrow. The structural
 // invariants are enforced by the type system.
 //
-// Nullable rather than optional throughout so OpenAI strict mode stays on.
-// Null means "leave at the Excalidraw default" and is stripped client side
-// before being handed to the helper.
+// Style properties are grouped into one optional `style` object per shape
+// (and label typography into `label`) instead of individually optional
+// fields. `z.union`'s six shape branches each spread their own copy of
+// every field, so flat optional fields multiply across branches: six style
+// fields x six branches alone compiled to 36 separate union/optional
+// parameters against Anthropic's per-request cap. Bundling into one
+// optional object per branch collapses that multiplication. The cost:
+// customizing any single style property means sending the whole group
+// (the descriptions below give Excalidraw's own defaults for the rest).
 
-const styling = {
-  strokeColor: z.string().nullable().describe("Hex stroke color. Null for default '#1e1e1e'."),
-  backgroundColor: z.string().nullable().describe("Hex fill color. Null for transparent."),
-  fillStyle: z.enum(["solid", "hachure", "cross-hatch"]).nullable(),
-  strokeWidth: z.number().nullable(),
-  roughness: z.number().nullable().describe("0 for clean, 1 for sketchy. Null for default."),
-  opacity: z.number().nullable(),
-};
+export const styleSchema = z
+  .object({
+    strokeColor: z
+      .string()
+      .describe("Hex stroke color. Excalidraw default: '#1e1e1e'."),
+    backgroundColor: z
+      .string()
+      .describe("Hex fill color. Excalidraw default: 'transparent'."),
+    fillStyle: z
+      .enum(["solid", "hachure", "cross-hatch"])
+      .describe("Excalidraw default: 'hachure'."),
+    strokeWidth: z.number().describe("Excalidraw default: 1."),
+    roughness: z
+      .number()
+      .describe("0 for clean, 1 for sketchy, 2 for cartoonish. Excalidraw default: 1."),
+    opacity: z.number().describe("0-100. Excalidraw default: 100."),
+  })
+  .describe(
+    "All style properties together. Omit this entire object to use Excalidraw's defaults for every one; to customize any single property, supply all six (use the stated defaults for the ones you aren't changing)."
+  );
 
 const labelSchema = z
   .object({
     text: z.string().describe("The label text rendered inside the shape or on the arrow."),
-    fontSize: z.number().nullable(),
-    textAlign: z.enum(["left", "center", "right"]).nullable(),
+    fontSize: z.number().describe("Excalidraw default: 20."),
+    textAlign: z.enum(["left", "center", "right"]).describe("Excalidraw default: 'left'."),
   })
   .describe(
-    "Label rendered inside this shape (or on this arrow). Excalidraw centers the text inside the container automatically and creates the bound text element for you. This is the ONLY way to put text inside a box. Null for unlabeled shapes."
+    "Label rendered inside this shape (or on this arrow). Excalidraw centers the text inside the container automatically and creates the bound text element for you. This is the ONLY way to put text inside a box. Omit for unlabeled shapes."
   );
 
 const baseFields = {
@@ -55,29 +73,19 @@ const baseFields = {
   height: z.number().describe("Height in pixels. At least 20."),
 };
 
-// Container shapes share an identical structure, only the type literal
-// differs. Generating them from a helper would be DRYer but obscures the
-// schema for students reading the file, so we spell each one out.
-
-const rectangleSchema = z.object({
-  type: z.literal("rectangle"),
+// Container shapes (rectangle/ellipse/diamond) are structurally identical,
+// only the `type` value differs, so they're one union branch with `type`
+// as an enum rather than three near-duplicate branches. Each duplicate
+// branch is a full separate object in the compiled grammar (label, style,
+// and their nested fields all over again), which adds real compilation
+// cost independent of the optional/union-typed parameter count. Merging
+// costs nothing structurally: arrow/line still require start/end, only
+// containers and arrows get label, text is still the only bare-text type.
+const containerSchema = z.object({
+  type: z.enum(["rectangle", "ellipse", "diamond"]),
   ...baseFields,
-  label: labelSchema.nullable(),
-  ...styling,
-});
-
-const ellipseSchema = z.object({
-  type: z.literal("ellipse"),
-  ...baseFields,
-  label: labelSchema.nullable(),
-  ...styling,
-});
-
-const diamondSchema = z.object({
-  type: z.literal("diamond"),
-  ...baseFields,
-  label: labelSchema.nullable(),
-  ...styling,
+  label: labelSchema.optional(),
+  style: styleSchema.optional(),
 });
 
 const endpointSchema = z
@@ -93,22 +101,22 @@ const endpointSchema = z
 const arrowSchema = z.object({
   type: z.literal("arrow"),
   ...baseFields,
-  start: endpointSchema.nullable(),
-  end: endpointSchema.nullable(),
+  start: endpointSchema.optional(),
+  end: endpointSchema.optional(),
   label: labelSchema
-    .nullable()
+    .optional()
     .describe(
-      "Optional label rendered on the arrow itself, e.g. 'yes', 'no', '1. login'. Null for unlabeled arrows."
+      "Optional label rendered on the arrow itself, e.g. 'yes', 'no', '1. login'. Omit for unlabeled arrows."
     ),
-  ...styling,
+  style: styleSchema.optional(),
 });
 
 const lineSchema = z.object({
   type: z.literal("line"),
   ...baseFields,
-  start: endpointSchema.nullable(),
-  end: endpointSchema.nullable(),
-  ...styling,
+  start: endpointSchema.optional(),
+  end: endpointSchema.optional(),
+  style: styleSchema.optional(),
 });
 
 // Standalone text. Use this ONLY for floating annotations that are not
@@ -117,9 +125,9 @@ const textSchema = z.object({
   type: z.literal("text"),
   ...baseFields,
   text: z.string().describe("The text content. Required."),
-  fontSize: z.number().nullable(),
-  textAlign: z.enum(["left", "center", "right"]).nullable(),
-  ...styling,
+  fontSize: z.number().describe("Excalidraw default: 20."),
+  textAlign: z.enum(["left", "center", "right"]).describe("Excalidraw default: 'left'."),
+  style: styleSchema.optional(),
 });
 
 // NOTE: we use z.union, not z.discriminatedUnion. They look interchangeable
@@ -128,9 +136,7 @@ const textSchema = z.object({
 // z.union produces `anyOf`, which strict mode accepts. The model still
 // picks the right branch by the `type` literal either way.
 export const elementSchema = z.union([
-  rectangleSchema,
-  ellipseSchema,
-  diamondSchema,
+  containerSchema,
   arrowSchema,
   lineSchema,
   textSchema,
