@@ -15,5 +15,5 @@
     "noFallthroughCasesInSwitch": true,
     "types": ["node"]
   },
-  "include": ["vite.config.ts", "evals/**/*.ts"]
+  "include": ["vite.config.ts", "evals/**/*.ts", "src/rag/embed.ts"]
 }

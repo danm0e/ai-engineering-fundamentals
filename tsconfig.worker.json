@@ -23,6 +23,7 @@
     "src/**/*.ts"
   ],
   "exclude": [
-    "src/vite-env.d.ts"
+    "src/vite-env.d.ts",
+    "src/rag/embed.ts"
   ]
 }
